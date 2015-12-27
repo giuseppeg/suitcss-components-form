@@ -1,0 +1,408 @@
+/** @define Form */
+
+:root {
+
+  /* .Form-label properties */
+
+  /* .Form-input properties */
+
+  /* checkbox and radio properties */
+
+  /* Custom <select> arrow properties */
+
+  /* .Form-message properties */
+
+  /* .Form[-field]--horizontal properties */
+
+  /* .Form--spaced properties */
+
+  /* .Form-field's State properties */
+
+  /* .Form-field.is-valid properties */
+
+  /* .Form-field.is-invalid properties */
+
+  /* .Form-field.is-warning properties */
+}
+
+/**
+ * Generic Form component
+ *
+ * Provides styles to create stacked (by default) and horizontal forms
+ */
+
+/* Form parts
+   ========================================================================== */
+
+/**
+ * Form container – usually the <form> element.
+ */
+
+.Form {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+/**
+ * Form field.
+ *
+ * Container for text (label), a form input and (optionally) a message.
+ */
+
+.Form-field {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Form label.
+ */
+
+.Form-label {
+  color: inherit;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  margin: 0;
+}
+
+/**
+ * Form input.
+ */
+
+.Form-input {
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: inherit;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+/**
+ * Simple Custom <select>.
+ *
+ * 1. Change the `appearance` so that padding and custom arrow applies.
+ * 2. Reset `padding-right` for IE<=9
+ */
+
+/* postcss-bem-linter: ignore */
+
+select.Form-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; /* 1 */
+  background-color: #fff;
+
+  /* Custom arrow styles. */
+
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAAUklEQVQY02P4z0AMRGZGMaShwCisyhITmb8huMzfEhOxKvuvsGAh208Ik+3ngoX/FbBbClcIUcSAw21QhXxfIIrwKAMpfNsEUYRXGVCEFc6CQwBqq4CCCtU4VgAAAABJRU5ErkJggg==");
+  background-image: -webkit-image-set(
+      url(
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAAUklEQVQY02P4z0AMRGZGMaShwCisyhITmb8huMzfEhOxKvuvsGAh208Ik+3ngoX/FbBbClcIUcSAw21QhXxfIIrwKAMpfNsEUYRXGVCEFc6CQwBqq4CCCtU4VgAAAABJRU5ErkJggg=="
+      ) 1x,
+      url(
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAQCAQAAAA/1a6rAAAAQUlEQVR4Xu3MsQnAMBAEMI1+myf9gw0+3ASCenmu+mQn2yGn3S4Mp906DEW3CEPfzTD03QxD380w3OmIUHe9v+u9QwAt93yns5cAAAAASUVORK5CYII="
+      ) 2x
+    );
+  background-image: image-set(
+      url(
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAAUklEQVQY02P4z0AMRGZGMaShwCisyhITmb8huMzfEhOxKvuvsGAh208Ik+3ngoX/FbBbClcIUcSAw21QhXxfIIrwKAMpfNsEUYRXGVCEFc6CQwBqq4CCCtU4VgAAAABJRU5ErkJggg=="
+      ) 1x,
+      url(
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAQCAQAAAA/1a6rAAAAQUlEQVR4Xu3MsQnAMBAEMI1+myf9gw0+3ASCenmu+mQn2yGn3S4Mp906DEW3CEPfzTD03QxD380w3OmIUHe9v+u9QwAt93yns5cAAAAASUVORK5CYII="
+      ) 2x
+    );
+  background-position: right 0.5em center;
+  background-repeat: no-repeat;
+  padding-right: calc(
+      20px + 1em
+    );
+  padding-right: 0.5em \9; /* 2 */
+}
+
+/**
+ * Range input resets.
+ */
+
+.Form-input[type="range"] {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Form-inputWrapper: a generic Form-input wrapper.
+ *
+ * Use it to group .Form-input and .Form-message when making horizontal forms.
+ */
+
+.Form-inputWrapper {
+  display: block;
+  width: 100%;
+}
+
+/**
+ * Form field message.
+ */
+
+.Form-message {
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  font-weight: bold \9;
+  margin: 0;
+}
+
+/**
+ * Form button.
+ *
+ * A form <button> container.
+ *
+ * N.B. Form-button makes buttons full-width.
+ *      Set the `display` property to `inline-block` to change this behavior.
+ *      The rules are `!important` to ensure consistency with the Form styles.
+ *      <button>s are not styled and the styling is left to the consumer
+ *      of this component.
+ */
+
+/* postcss-bem-linter: ignore */
+
+.Form-button > button {
+  border-radius: 3px !important;
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  padding: 0.5em !important;
+  width: 100%;
+}
+
+/**
+ * Spacing between Form-label and Form-input[Wrapper]
+ */
+
+.Form-label + .Form-input,
+.Form-label + .Form-inputWrapper {
+  margin-top: 0.5em;
+}
+
+/**
+ * Spacing between Form-input and Form-message
+ */
+
+.Form-input + .Form-message {
+  margin-top: 0.5em;
+}
+
+/**
+ * Modifier: Form-field--checkbox, Form-field--radio
+ *
+ * 1. Immutable property.
+ */
+
+.Form-field--checkbox,
+.Form-field--radio {
+  display: table;
+}
+
+.Form-field--checkbox .Form-input,
+.Form-field--radio .Form-input {
+  border: 0;
+  display: table-cell;
+  margin-right: 0.5em !important; /* 1 */
+  padding: 0;
+  width: auto !important; /* 1 */
+}
+
+/* postcss-bem-linter: ignore */
+
+[dir="rtl"] .Form-field--checkbox .Form-input,
+[dir="rtl"] .Form-field--radio .Form-input {
+  margin-left: 0.5em !important; /* 1 */
+  margin-right: 0 !important; /* 1 */
+}
+
+.Form-field--checkbox .Form-label,
+.Form-field--radio .Form-label {
+  display: table-cell;
+  font-weight: normal;
+  width: 100% !important; /* 1 */
+}
+
+/**
+ * Modifier: horizontal form[ field]
+ *
+ * 1. Horizontal gutters
+ */
+
+.Form--horizontal .Form-field,
+.Form-field--horizontal {
+  border-collapse: separate;
+  border-spacing: 0.5em 0; /* 1 */
+  display: table;
+  margin: 0 -0.5em; /* 1 */
+  min-width: 100%;
+}
+
+/**
+ * .Form-field Modifier: allows for inline no-wrapping Form-label
+ * that expands on :hover to reveal the full-length text.
+ *
+ * N.B. an explicit width is required to be set
+ *      on the Form-label for this modifier to work.
+ *
+ * 1. IE<=9 workarounds.
+ * 2. Prevents the cell-width to exceed the actual value set on the element.
+ */
+
+.Form-field--fit {
+  table-layout: fixed\9; /* 1 */
+  width: calc(100% + 1em);
+  width: 100%\9; /* 1 */
+}
+
+.Form-field--fit:hover {
+  table-layout: auto\9; /* 1 */
+}
+
+.Form-field--fit .Form-label {
+  max-width: 0; /* 2 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Form-field--fit .Form-label:active,
+.Form-field--fit .Form-label:hover {
+  max-width: none;
+}
+
+/**
+ * 1. Reset border-collapse to not affect the descendants
+ */
+
+.Form--horizontal .Form-label,
+.Form-field--horizontal .Form-label {
+  border-collapse: collapse; /* 1 */
+  display: table-cell;
+  margin: 0;
+  width: 1%;
+}
+
+.Form--horizontal .Form-input,
+.Form-field--horizontal .Form-input {
+  display: table-cell;
+  margin: 0;
+  width: 100%;
+}
+
+/**
+ * 1. Reset border-collapse to not affect the descendants
+ */
+
+.Form--horizontal .Form-inputWrapper,
+.Form-field--horizontal .Form-inputWrapper {
+  border-collapse: collapse; /* 1 */
+  display: table-cell;
+  margin: 0;
+  width: 100%;
+}
+
+.Form-inputWrapper .Form-input {
+  display: block;
+}
+
+/* postcss-bem-linter: ignore */
+
+.Form--horizontal textarea,
+.Form-field--horizontal textarea {
+  vertical-align: top;
+}
+
+/**
+ * 1. Reset border-collapse to not affect the descendants
+ */
+
+.Form--horizontal .Form-button,
+.Form-field--horizontal .Form-button {
+  border-collapse: collapse; /* 1 */
+  display: table-cell;
+  width: 1%;
+}
+
+/**
+ * Modifier: adds vertical space between Form-field
+ *
+ * 1. Prevents collapsing margins
+ */
+
+.Form--spaced {
+  display: inline-block; /* 1 */
+  margin-top: -1.25em;
+}
+
+.Form--spaced .Form-field {
+  margin-top: 1.25em;
+}
+
+.Form--spaced .Form-field--checkbox + .Form-field--checkbox,
+.Form--spaced .Form-field--radio + .Form-field--radio {
+  margin-top: 0.625em;
+}
+
+/**
+ * State: is-valid
+ */
+
+.Form-field.is-valid .Form-label {
+  color: #008000;
+}
+
+.Form-field.is-valid .Form-input {
+  border-color: #008000;
+  outline-color: #008000;
+}
+
+.Form-field.is-valid .Form-message {
+  color: #008000;
+}
+
+/**
+ * State: is-invalid
+ */
+
+.Form-field.is-invalid .Form-label {
+  color: #f00;
+}
+
+.Form-field.is-invalid .Form-input {
+  border-color: #f00;
+  outline-color: #f00;
+}
+
+.Form-field.is-invalid .Form-message {
+  color: #f00;
+}
+
+/**
+ * State: is-warning
+ */
+
+.Form-field.is-warning .Form-label {
+  color: #ffa500;
+}
+
+.Form-field.is-warning .Form-input {
+  border-color: #ffa500;
+  outline-color: #ffa500;
+}
+
+.Form-field.is-warning .Form-message {
+  color: #ffa500;
+}
+
