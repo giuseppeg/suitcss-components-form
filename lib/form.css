@@ -170,12 +170,12 @@ select.Form-input {
 }
 
 /**
- * Form-inputWrapper: a generic Form-input wrapper.
+ * Form-wrapInput: a generic Form-input wrapper.
  *
  * Use it to group .Form-input and .Form-message when making horizontal forms.
  */
 
-.Form-inputWrapper {
+.Form-wrapInput {
   display: block;
   width: 100%;
 }
@@ -195,9 +195,9 @@ select.Form-input {
 /**
  * Form button.
  *
- * A form <button> container.
+ * Wraps a nested <button> component.
  *
- * N.B. Form-button makes buttons full-width.
+ * N.B. Form-wrapButton makes buttons full-width.
  *      Set the `display` property to `inline-block` to change this behavior.
  *      The rules are `!important` to ensure consistency with the Form styles.
  *      <button>s are not styled and the styling is left to the consumer
@@ -206,7 +206,7 @@ select.Form-input {
 
 /* postcss-bem-linter: ignore */
 
-.Form-button > button {
+.Form-wrapButton > button {
   border-radius: var(--Form-input-border-radius) !important;
   box-sizing: border-box !important;
   font-family: inherit !important;
@@ -220,7 +220,7 @@ select.Form-input {
  */
 
 .Form-label + .Form-input,
-.Form-label + .Form-inputWrapper {
+.Form-label + .Form-wrapInput {
   margin-top: var(--Form-label-margin);
 }
 
@@ -338,15 +338,15 @@ select.Form-input {
  * 1. Reset border-collapse to not affect the descendants
  */
 
-.Form--horizontal .Form-inputWrapper,
-.Form-field--horizontal .Form-inputWrapper {
+.Form--horizontal .Form-wrapInput,
+.Form-field--horizontal .Form-wrapInput {
   border-collapse: collapse; /* 1 */
   display: table-cell;
   margin: 0;
   width: 100%;
 }
 
-.Form-inputWrapper .Form-input {
+.Form-wrapInput .Form-input {
   display: block;
 }
 
@@ -361,8 +361,8 @@ select.Form-input {
  * 1. Reset border-collapse to not affect the descendants
  */
 
-.Form--horizontal .Form-button,
-.Form-field--horizontal .Form-button {
+.Form--horizontal .Form-wrapButton,
+.Form-field--horizontal .Form-wrapButton {
   border-collapse: collapse; /* 1 */
   display: table-cell;
   width: 1%;
