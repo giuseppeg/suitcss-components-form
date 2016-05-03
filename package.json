@@ -1,7 +1,7 @@
 {
   "name": "suitcss-components-form",
   "description": "Component CSS for forms",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "license": "MIT",
   "style": "index.css",
   "files": [
@@ -10,10 +10,9 @@
     "lib"
   ],
   "devDependencies": {
-    "stylelint-config-suitcss": "^1.0.0",
+    "stylelint-config-suitcss": "^5.0.0",
     "suitcss-components-test": "*",
-    "suitcss-preprocessor": "^0.8.0",
-    "suitcss-utils-size": "^1.0.1"
+    "suitcss-preprocessor": "^1.0.0"
   },
   "scripts": {
     "build": "npm run setup && npm run preprocess",
